@@ -1,7 +1,7 @@
 from PIL import Image, ImageDraw
 import math
 
-img = Image.new(mode='RGB', size=(16000, 16000), color='white')
+img = Image.new(mode='RGB', size=(1080, 1080), color='white')
 draw = ImageDraw.Draw(img)
 
 def middle(p1, p2):
@@ -37,7 +37,7 @@ class Triangle:
 		else:
 			return []
 
-q = [Triangle((0, 15999), (15999, 15999), (8000, 0), 7)]
+q = [Triangle((0, 1079), (1079, 1079), (540, 0), 7)]
 
 draw.line((q[0].p1, q[0].p2), fill='black', width=0)
 draw.line((q[0].p2, q[0].p3), fill='black', width=0)
@@ -53,4 +53,4 @@ for t in q:
 #			img.putpixel((x, y), (0, 0, 0, 255))
 
 img.save("triangle.png")
-#img.show()
+img.show()
